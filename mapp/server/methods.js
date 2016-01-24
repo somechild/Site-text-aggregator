@@ -68,9 +68,8 @@ if (Meteor.isServer) {
 
 				if (typeof fut.wait() == "string")
 					return fut.wait();
-				else if (fut.wait().isError) {
+				else if (fut.wait().isError)
 					throw new Meteor.Error("Error requesting the html from this url");
-				};
 			}
 			else
 				throw new Meteor.Error('No url');

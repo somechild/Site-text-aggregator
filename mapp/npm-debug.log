@@ -1,9 +1,9 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'cheerio' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'node-xlsx' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose cache add [ 'cheerio', null ]
-5 verbose cache add name=undefined spec="cheerio" args=["cheerio",null]
+4 verbose cache add [ 'node-xlsx', null ]
+5 verbose cache add name=undefined spec="node-xlsx" args=["node-xlsx",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -13,167 +13,101 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'cheerio',
-6 verbose parsed url   path: 'cheerio',
-6 verbose parsed url   href: 'cheerio' }
-7 silly lockFile efb58830-cheerio cheerio
-8 verbose lock cheerio /Users/Jay/.npm/efb58830-cheerio.lock
-9 silly lockFile efb58830-cheerio cheerio
-10 silly lockFile efb58830-cheerio cheerio
-11 verbose addNamed [ 'cheerio', '' ]
+6 verbose parsed url   pathname: 'node-xlsx',
+6 verbose parsed url   path: 'node-xlsx',
+6 verbose parsed url   href: 'node-xlsx' }
+7 silly lockFile e00fd633-node-xlsx node-xlsx
+8 verbose lock node-xlsx /Users/Jay/.npm/e00fd633-node-xlsx.lock
+9 silly lockFile e00fd633-node-xlsx node-xlsx
+10 silly lockFile e00fd633-node-xlsx node-xlsx
+11 verbose addNamed [ 'node-xlsx', '' ]
 12 verbose addNamed [ null, '*' ]
-13 silly lockFile 8cd5cc09-cheerio cheerio@
-14 verbose lock cheerio@ /Users/Jay/.npm/8cd5cc09-cheerio.lock
-15 silly addNameRange { name: 'cheerio', range: '*', hasData: false }
-16 verbose request where is /cheerio
+13 silly lockFile 5101ff76-node-xlsx node-xlsx@
+14 verbose lock node-xlsx@ /Users/Jay/.npm/5101ff76-node-xlsx.lock
+15 silly addNameRange { name: 'node-xlsx', range: '*', hasData: false }
+16 verbose request where is /node-xlsx
 17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 62daf30cd9865bd4
-19 verbose url raw /cheerio
-20 verbose url resolving [ 'https://registry.npmjs.org/', './cheerio' ]
-21 verbose url resolved https://registry.npmjs.org/cheerio
-22 verbose request where is https://registry.npmjs.org/cheerio
-23 info trying registry request attempt 1 at 18:14:32
-24 verbose etag "DX9ZNY876WGBVKTWT6II4DPG"
-25 http GET https://registry.npmjs.org/cheerio
-26 http 304 https://registry.npmjs.org/cheerio
+18 verbose request id 89f2f7d8ec886533
+19 verbose url raw /node-xlsx
+20 verbose url resolving [ 'https://registry.npmjs.org/', './node-xlsx' ]
+21 verbose url resolved https://registry.npmjs.org/node-xlsx
+22 verbose request where is https://registry.npmjs.org/node-xlsx
+23 info trying registry request attempt 1 at 21:02:33
+24 verbose etag "96FYWNIPOJS01ICGO5FIA7294"
+25 http GET https://registry.npmjs.org/node-xlsx
+26 http 304 https://registry.npmjs.org/node-xlsx
 27 silly registry.get cb [ 304,
-27 silly registry.get   { date: 'Sat, 23 Jan 2016 23:14:33 GMT',
+27 silly registry.get   { date: 'Sun, 24 Jan 2016 02:02:35 GMT',
 27 silly registry.get     via: '1.1 varnish',
 27 silly registry.get     'cache-control': 'max-age=300',
-27 silly registry.get     etag: '"DX9ZNY876WGBVKTWT6II4DPG"',
-27 silly registry.get     age: '172',
+27 silly registry.get     etag: '"96FYWNIPOJS01ICGO5FIA7294"',
+27 silly registry.get     age: '0',
 27 silly registry.get     connection: 'keep-alive',
-27 silly registry.get     'x-served-by': 'cache-atl6229-ATL',
-27 silly registry.get     'x-cache': 'HIT',
-27 silly registry.get     'x-cache-hits': '1',
-27 silly registry.get     'x-timer': 'S1453590873.471945,VS0,VE0',
+27 silly registry.get     'x-served-by': 'cache-jfk1025-JFK',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1453600955.218282,VS0,VE372',
 27 silly registry.get     vary: 'Accept' } ]
-28 verbose etag https://registry.npmjs.org/cheerio from cache
-29 silly addNameRange number 2 { name: 'cheerio', range: '*', hasData: true }
-30 silly addNameRange versions [ 'cheerio',
-30 silly addNameRange   [ '0.0.1',
-30 silly addNameRange     '0.0.2',
-30 silly addNameRange     '0.0.3',
-30 silly addNameRange     '0.0.4',
-30 silly addNameRange     '0.1.1',
-30 silly addNameRange     '0.1.2',
-30 silly addNameRange     '0.1.3',
-30 silly addNameRange     '0.1.4',
-30 silly addNameRange     '0.1.5',
-30 silly addNameRange     '0.2.0',
-30 silly addNameRange     '0.2.1',
-30 silly addNameRange     '0.2.2',
-30 silly addNameRange     '0.3.0',
-30 silly addNameRange     '0.3.1',
-30 silly addNameRange     '0.3.2',
-30 silly addNameRange     '0.4.0',
-30 silly addNameRange     '0.4.1',
-30 silly addNameRange     '0.4.2',
-30 silly addNameRange     '0.5.0',
-30 silly addNameRange     '0.5.1',
-30 silly addNameRange     '0.5.2',
-30 silly addNameRange     '0.6.0',
-30 silly addNameRange     '0.6.1',
-30 silly addNameRange     '0.6.2',
-30 silly addNameRange     '0.7.0',
-30 silly addNameRange     '0.8.0',
-30 silly addNameRange     '0.8.1',
-30 silly addNameRange     '0.8.2',
-30 silly addNameRange     '0.8.3',
-30 silly addNameRange     '0.9.0',
-30 silly addNameRange     '0.9.1',
-30 silly addNameRange     '0.9.2',
-30 silly addNameRange     '0.10.0',
-30 silly addNameRange     '0.10.1',
-30 silly addNameRange     '0.10.2',
-30 silly addNameRange     '0.10.3',
-30 silly addNameRange     '0.10.4',
-30 silly addNameRange     '0.10.5',
-30 silly addNameRange     '0.10.6',
-30 silly addNameRange     '0.10.7',
-30 silly addNameRange     '0.10.8',
-30 silly addNameRange     '0.11.0',
-30 silly addNameRange     '0.12.0',
-30 silly addNameRange     '0.12.1',
-30 silly addNameRange     '0.12.2',
-30 silly addNameRange     '0.12.3',
-30 silly addNameRange     '0.12.4',
-30 silly addNameRange     '0.13.0',
-30 silly addNameRange     '0.13.1',
-30 silly addNameRange     '0.14.0',
-30 silly addNameRange     '0.15.0',
-30 silly addNameRange     '0.16.0',
-30 silly addNameRange     '0.17.0',
-30 silly addNameRange     '0.18.0',
-30 silly addNameRange     '0.19.0' ] ]
-31 verbose addNamed [ 'cheerio', '0.19.0' ]
-32 verbose addNamed [ '0.19.0', '0.19.0' ]
-33 silly lockFile 31c8477d-cheerio-0-19-0 cheerio@0.19.0
-34 verbose lock cheerio@0.19.0 /Users/Jay/.npm/31c8477d-cheerio-0-19-0.lock
-35 silly lockFile 31c8477d-cheerio-0-19-0 cheerio@0.19.0
-36 silly lockFile 31c8477d-cheerio-0-19-0 cheerio@0.19.0
-37 silly lockFile 8cd5cc09-cheerio cheerio@
-38 silly lockFile 8cd5cc09-cheerio cheerio@
-39 silly resolved [ { name: 'cheerio',
-39 silly resolved     version: '0.19.0',
-39 silly resolved     description: 'Tiny, fast, and elegant implementation of core jQuery designed specifically for the server',
-39 silly resolved     author:
-39 silly resolved      { name: 'Matt Mueller',
-39 silly resolved        email: 'mattmuelle@gmail.com',
-39 silly resolved        url: 'mat.io' },
-39 silly resolved     license: 'MIT',
-39 silly resolved     keywords: [ 'htmlparser', 'jquery', 'selector', 'scraper', 'parser', 'html' ],
-39 silly resolved     repository: { type: 'git', url: 'git://github.com/cheeriojs/cheerio.git' },
-39 silly resolved     main: './index.js',
-39 silly resolved     engines: { node: '>= 0.6' },
+28 verbose etag https://registry.npmjs.org/node-xlsx from cache
+29 silly addNameRange number 2 { name: 'node-xlsx', range: '*', hasData: true }
+30 silly addNameRange versions [ 'node-xlsx',
+30 silly addNameRange   [ '0.2.2', '0.3.0', '0.4.0', '0.5.0', '0.5.1', '0.6.0' ] ]
+31 verbose addNamed [ 'node-xlsx', '0.6.0' ]
+32 verbose addNamed [ '0.6.0', '0.6.0' ]
+33 silly lockFile 4f0e1d77-node-xlsx-0-6-0 node-xlsx@0.6.0
+34 verbose lock node-xlsx@0.6.0 /Users/Jay/.npm/4f0e1d77-node-xlsx-0-6-0.lock
+35 silly lockFile 4f0e1d77-node-xlsx-0-6-0 node-xlsx@0.6.0
+36 silly lockFile 4f0e1d77-node-xlsx-0-6-0 node-xlsx@0.6.0
+37 silly lockFile 5101ff76-node-xlsx node-xlsx@
+38 silly lockFile 5101ff76-node-xlsx node-xlsx@
+39 silly resolved [ { name: 'node-xlsx',
+39 silly resolved     author: { name: 'Olivier Louvignes' },
+39 silly resolved     license: 'Apache License, Version 2.0',
+39 silly resolved     version: '0.6.0',
+39 silly resolved     description: 'Node.js excel parser & builder',
+39 silly resolved     main: 'index.js',
+39 silly resolved     scripts: { test: 'nodeunit test' },
+39 silly resolved     repository:
+39 silly resolved      { type: 'git',
+39 silly resolved        url: 'git+https://github.com/mgcrea/node-xlsx.git' },
+39 silly resolved     keywords: [ 'excel', 'xlsx' ],
 39 silly resolved     dependencies:
-39 silly resolved      { 'css-select': '~1.0.0',
-39 silly resolved        entities: '~1.1.1',
-39 silly resolved        htmlparser2: '~3.8.1',
-39 silly resolved        'dom-serializer': '~0.1.0',
-39 silly resolved        lodash: '^3.2.0' },
-39 silly resolved     devDependencies:
-39 silly resolved      { benchmark: '~1.0.0',
-39 silly resolved        coveralls: '~2.10',
-39 silly resolved        'expect.js': '~0.3.1',
-39 silly resolved        istanbul: '~0.2',
-39 silly resolved        jsdom: '~0.8.9',
-39 silly resolved        jshint: '~2.5.1',
-39 silly resolved        mocha: '*',
-39 silly resolved        xyz: '~0.5.0' },
-39 silly resolved     scripts: { test: 'make test' },
-39 silly resolved     gitHead: '9e3746d391c47a09ad5b130d770c747a0d673869',
-39 silly resolved     bugs: { url: 'https://github.com/cheeriojs/cheerio/issues' },
-39 silly resolved     homepage: 'https://github.com/cheeriojs/cheerio',
-39 silly resolved     _id: 'cheerio@0.19.0',
-39 silly resolved     _shasum: '772e7015f2ee29965096d71ea4175b75ab354925',
-39 silly resolved     _from: 'cheerio@',
-39 silly resolved     _npmVersion: '2.7.1',
-39 silly resolved     _nodeVersion: '1.5.1',
-39 silly resolved     _npmUser: { name: 'feedic', email: 'me@feedic.com' },
-39 silly resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+39 silly resolved      { 'lodash.defaults': '^3.1.2',
+39 silly resolved        'lodash.map': '^3.1.4',
+39 silly resolved        xlsx: '^0.8.0' },
+39 silly resolved     devDependencies: { nodeunit: '^0.9.1' },
+39 silly resolved     gitHead: '1bb0c6941d84eadef6a7133952d8387c6d5c7b6b',
+39 silly resolved     bugs: { url: 'https://github.com/mgcrea/node-xlsx/issues' },
+39 silly resolved     homepage: 'https://github.com/mgcrea/node-xlsx#readme',
+39 silly resolved     _id: 'node-xlsx@0.6.0',
+39 silly resolved     _shasum: 'a6dc0934b4faef61026cddd9c41c8f167bf7b4c2',
+39 silly resolved     _from: 'node-xlsx@',
+39 silly resolved     _npmVersion: '2.11.3',
+39 silly resolved     _nodeVersion: '2.3.2',
+39 silly resolved     _npmUser: { name: 'mgcrea', email: 'olivier@mg-crea.com' },
 39 silly resolved     dist:
-39 silly resolved      { shasum: '772e7015f2ee29965096d71ea4175b75ab354925',
-39 silly resolved        tarball: 'http://registry.npmjs.org/cheerio/-/cheerio-0.19.0.tgz' },
+39 silly resolved      { shasum: 'a6dc0934b4faef61026cddd9c41c8f167bf7b4c2',
+39 silly resolved        tarball: 'http://registry.npmjs.org/node-xlsx/-/node-xlsx-0.6.0.tgz' },
+39 silly resolved     maintainers: [ [Object] ],
 39 silly resolved     directories: {},
-39 silly resolved     _resolved: 'https://registry.npmjs.org/cheerio/-/cheerio-0.19.0.tgz',
+39 silly resolved     _resolved: 'https://registry.npmjs.org/node-xlsx/-/node-xlsx-0.6.0.tgz',
 39 silly resolved     readme: 'ERROR: No README data found!' } ]
-40 info install cheerio@0.19.0 into /usr/local/lib
-41 info installOne cheerio@0.19.0
-42 verbose lib/node_modules/cheerio unbuild
-43 verbose tar unpack /Users/Jay/.npm/cheerio/0.19.0/package.tgz
-44 silly lockFile 7d4976a9-r-local-lib-node-modules-cheerio tar:///usr/local/lib/node_modules/cheerio
-45 verbose lock tar:///usr/local/lib/node_modules/cheerio /Users/Jay/.npm/7d4976a9-r-local-lib-node-modules-cheerio.lock
-46 silly lockFile 4253bb3e-y-npm-cheerio-0-19-0-package-tgz tar:///Users/Jay/.npm/cheerio/0.19.0/package.tgz
-47 verbose lock tar:///Users/Jay/.npm/cheerio/0.19.0/package.tgz /Users/Jay/.npm/4253bb3e-y-npm-cheerio-0-19-0-package-tgz.lock
+40 info install node-xlsx@0.6.0 into /usr/local/lib
+41 info installOne node-xlsx@0.6.0
+42 verbose lib/node_modules/node-xlsx unbuild
+43 verbose tar unpack /Users/Jay/.npm/node-xlsx/0.6.0/package.tgz
+44 silly lockFile 346f7cce-local-lib-node-modules-node-xlsx tar:///usr/local/lib/node_modules/node-xlsx
+45 verbose lock tar:///usr/local/lib/node_modules/node-xlsx /Users/Jay/.npm/346f7cce-local-lib-node-modules-node-xlsx.lock
+46 silly lockFile 39da78f7--npm-node-xlsx-0-6-0-package-tgz tar:///Users/Jay/.npm/node-xlsx/0.6.0/package.tgz
+47 verbose lock tar:///Users/Jay/.npm/node-xlsx/0.6.0/package.tgz /Users/Jay/.npm/39da78f7--npm-node-xlsx-0-6-0-package-tgz.lock
 48 silly gunzTarPerm modes [ '755', '644' ]
-49 error Error: EACCES, mkdir '/usr/local/lib/node_modules/cheerio'
-49 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/cheerio']
+49 error Error: EACCES, mkdir '/usr/local/lib/node_modules/node-xlsx'
+49 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/node-xlsx']
 49 error   errno: 3,
 49 error   code: 'EACCES',
-49 error   path: '/usr/local/lib/node_modules/cheerio',
+49 error   path: '/usr/local/lib/node_modules/node-xlsx',
 49 error   fstream_type: 'Directory',
-49 error   fstream_path: '/usr/local/lib/node_modules/cheerio',
+49 error   fstream_path: '/usr/local/lib/node_modules/node-xlsx',
 49 error   fstream_class: 'DirWriter',
 49 error   fstream_stack:
 49 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
@@ -181,17 +115,17 @@
 49 error      'Object.oncomplete (fs.js:107:15)' ] }
 50 error Please try running this command again as root/Administrator.
 51 error System Darwin 15.2.0
-52 error command "node" "/usr/local/bin/npm" "install" "-g" "cheerio"
+52 error command "node" "/usr/local/bin/npm" "install" "-g" "node-xlsx"
 53 error cwd /Users/Jay/Desktop/Site-text-aggregator/mapp
 54 error node -v v0.10.33
 55 error npm -v 1.4.28
-56 error path /usr/local/lib/node_modules/cheerio
-57 error fstream_path /usr/local/lib/node_modules/cheerio
+56 error path /usr/local/lib/node_modules/node-xlsx
+57 error fstream_path /usr/local/lib/node_modules/node-xlsx
 58 error fstream_type Directory
 59 error fstream_class DirWriter
 60 error code EACCES
 61 error errno 3
-62 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/cheerio'
+62 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/node-xlsx'
 63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
 63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
 63 error fstream_stack Object.oncomplete (fs.js:107:15)

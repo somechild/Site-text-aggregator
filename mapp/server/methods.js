@@ -5,10 +5,11 @@ if (Meteor.isServer) {
 			if (siteUrl) {
 
 				var fut = new Future();
-				if (!fut) {return};
 				request(siteUrl, function(err, resp, html) {
 					if (err) {
-						fut['return']("FUcking err dewd: " + err.reason);
+						var errr = err;
+						errr.isError = true;
+						fut['return'](errr);
 					}
 					else{
 						var txtToRet = {
@@ -58,16 +59,21 @@ if (Meteor.isServer) {
 						txtToRet.txt = txtToRet.txt.split(' ').reduce(function(p, c) {
 							return p + " " + ((c.indexOf("loading") + c.indexOf("Loading") + c.indexOf("processing") + c.indexOf("Processing")) == -4? c: "");
 						});
-						txtToRet.txt.replace(/(\r\n|\n|\r)/gm,"").trim();
+						txtToRet.txt = txtToRet.txt.replace(/(\r\n|\n|\r)/gm, " ").replace(/\n|\s|\r|\t/g, " ").replace("  ", " ").replace("   ", " ").trim();
 
 						fut['return'](txtToRet.txt);
 					};
 				});
 
-				return fut.wait();
+
+				if (typeof fut.wait() == "string")
+					return fut.wait();
+				else if (fut.wait().isError) {
+					throw new Meteor.Error("Error requesting the html from this url");
+				};
 			}
 			else
-				return "Err, no site url";
+				throw new Meteor.Error('No url');
 		}
 	});
 };

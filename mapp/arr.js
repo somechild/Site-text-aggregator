@@ -1,4 +1,4 @@
-//array of sites to test before implementing contract
+//array of sites to test before implementing actualy excel sheet
 
 arr = [
 // apps

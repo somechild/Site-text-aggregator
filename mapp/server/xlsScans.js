@@ -10,7 +10,8 @@ if (Meteor.isServer) {
 
 	//the spreadsheet that is created afterwards
 	var NewSpreadsheet = {
-		title: "SheetWithDataFetched.xlsx"
+		title: "SheetWithDataFetched.xlsx", //title for it
+		prefReplaceSpChars: true  // if you would special chars like the following to be removed -> ~!@#$%^&*()-_+=|{}[];'":.></?`
 	};
 
 	console.log('Reading file...');
@@ -39,12 +40,13 @@ if (Meteor.isServer) {
 			Meteor.call('getText', e, function(err, resp) {
 				if (err) {
 					listOfText[i] = "Error reading this url";
+					console.log('There has been an error in the response for the url at row ' + (i+1));
 				}
 				else{
-					listOfText[i] = resp;
+					listOfText[i] = NewSpreadsheet.prefReplaceSpChars? resp./*replace(/[^\w\s]/gi, ' ')*/replace(/[`—–~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "): resp;
+					console.log('Scraped text response for url at row ' + (i+1) + ' of total ' + listOfUrls.length + ' rows has been recieved');
 				};
 			});
-			console.log('Scraped text response for url at row ' + (i+1) + ' has been recieved');
 		};
 
 		if (i+1 == listOfUrls.length)
@@ -70,6 +72,9 @@ if (Meteor.isServer) {
 					if (textToEnter.length > 32500) {
 						thisText = thisText.slice(0, 32500);
 						textToEnter = textToEnter.slice(32500);
+					}
+					else{
+						textToEnter = "";
 					};
 
 					if (thisText) {

@@ -59,7 +59,7 @@ if (Meteor.isServer) {
 						txtToRet.txt = txtToRet.txt.split(' ').reduce(function(p, c) {
 							return p + " " + ((c.indexOf("loading") + c.indexOf("Loading") + c.indexOf("processing") + c.indexOf("Processing")) == -4? c: "");
 						});
-						txtToRet.txt = txtToRet.txt.replace(/(\r\n|\n|\r)/gm, " ").replace(/\n|\s|\r|\t/g, " ").replace("  ", " ").replace("   ", " ").trim();
+						txtToRet.txt = txtToRet.txt.replace(/(\r\n|\n|\r)/gm, " ").replace(/\n|\s|\r|\t/g, " ").replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").trim();
 
 						fut['return'](txtToRet.txt);
 					};

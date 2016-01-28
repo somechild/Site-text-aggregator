@@ -1,3 +1,5 @@
+
+// Setting up npm requirements
 if (Meteor.isServer) {
 	cheerio = Meteor.npmRequire("cheerio");
 	request = Meteor.npmRequire("request");

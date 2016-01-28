@@ -14,11 +14,15 @@ if (Meteor.isServer) {
 		prefReplaceSpChars: true  // if you would special chars like the following to be removed -> ~!@#$%^&*()-_+=|{}[];'":.></?`
 	};
 
+
+
+	//begin parsing xls spreadhseet
 	console.log('Reading file...');
 
 	
 	var xlsxItem = xlsx.parse(Meteor.absolutePath + '/server/BookToWorkWith.xlsx');
 
+	// get an array of urls from spreadhseet
 	var listOfUrls = xlsxItem[xlsxDataToUse.spreadSheetIndex - 1].data.map(function(elem, i) {
 		if (i < xlsxDataToUse.webUrlsStartAtRowNo-1)
 			return;
@@ -28,8 +32,12 @@ if (Meteor.isServer) {
 	});
 
 	var listOfText = [];
+	// future waiting on listOfText being fully populated
 	var fut2 = new Future();
 
+	
+
+	//send out requests for each url in spreadsheet
 
 	console.log('Sending '+listOfUrls.length+' scrape requests...');
 
@@ -50,13 +58,21 @@ if (Meteor.isServer) {
 		};
 
 		if (i+1 == listOfUrls.length)
-			fut2['return'](true);
+			fut2['return'](true); //XX1XX -- if all requests recieved, continue code -- XX1XX
 	});
 
 	console.log('Scrape requests sent, just waiting on them...');
-	if (fut2.wait() === true) {
+
+
+
+
+	 //XX1XX -- if all requests recieved, continue code -- XX1XX
+
+	if (fut2.wait() === true) { 
 		console.log('Scrape responses recieved, creating new spreadsheet..');
 
+
+		// put scraped text back into a spreadsheet format
 		xlsxItem[xlsxDataToUse.spreadSheetIndex - 1].data = xlsxItem[xlsxDataToUse.spreadSheetIndex - 1].data.map(function(e, i) {
 			var el = e;
 			
@@ -91,16 +107,17 @@ if (Meteor.isServer) {
 
 
 		console.log('Spreadsheet created, a few more seconds to save it...');
-
+		//build spreadsheet into buffer
 		NewSpreadsheet.buffer = xlsx.build(xlsxItem);
 
+		//write new spreadsheet to server folder
 		writeFile(NewSpreadsheet.title, NewSpreadsheet.buffer);
 	};
 
 
 
 
-
+	//method for writing spreadsheet to server folder
 	function writeFile(title, buffer) {
 		fs.writeFile(Meteor.absolutePath + '/server/' + title, buffer, function(err) {
 			if (err)

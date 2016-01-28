@@ -1,25 +1,38 @@
 if (Meteor.isServer) {
-	//abs. no security features rn
+	//abs. no security features rn, this is just a simple method to get text of a site
 	Meteor.methods({
 		getText: function (siteUrl) {
 			if (siteUrl) {
 
+				// create a future waiting for final text to be set
 				var fut = new Future();
+
+				// send out request
 				request(siteUrl, function(err, resp, html) {
-					if (err) {
+					// handle request errors
+					if (err) { 
 						var errr = err;
 						errr.isError = true;
 						fut['return'](errr);
 					}
 					else{
+
+						// object containing text to return and a method to update text to return
 						var txtToRet = {
 							txt: "",
 							adder(a) {
 								this.txt+= (a && a.length? a + " ": "");
 							}
 						};
+
+						// load cheerio to traverse response html
 						$ = cheerio.load(html);
 						
+
+						// below, text will be added in textToRet.txt according to higherarch
+
+							//--- document head tag items go in there first, then h1,etc. tags, then other html marked up stuff
+
 						var title = $('head>title').text();
 						txtToRet.adder(title);
 
@@ -55,17 +68,27 @@ if (Meteor.isServer) {
 							txtToRet.adder($(this).text());
 						});
 
+						// --------------- end adding text --------------
 
+
+
+
+						//clean up text formatting to remove useless words and spaces
 						txtToRet.txt = txtToRet.txt.split(' ').reduce(function(p, c) {
 							return p + " " + ((c.indexOf("loading") + c.indexOf("Loading") + c.indexOf("processing") + c.indexOf("Processing")) == -4? c: "");
 						});
+
+
 						txtToRet.txt = txtToRet.txt.replace(/(\r\n|\n|\r)/gm, " ").replace(/\n|\s|\r|\t/g, " ").replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").trim();
 
+
+						//return text
 						fut['return'](txtToRet.txt);
 					};
 				});
 
 
+				//handle error or return string of scraped text
 				if (typeof fut.wait() == "string")
 					return fut.wait();
 				else if (fut.wait().isError)

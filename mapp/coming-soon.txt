@@ -1,0 +1,5 @@
+-> File uploading and parsing capabilities
+
+-> Auto filter by keyword list capabilities
+
+-> Keyword list hit rating split for every url

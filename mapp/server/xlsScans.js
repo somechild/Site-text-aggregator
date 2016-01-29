@@ -80,9 +80,11 @@ if (Meteor.isServer) {
 
 				var textToEnter = listOfText[i];
 
+				// go through each possible text entry column as specified by at the top
 				for (var i = 0; i < xlsxDataToUse.textEntryColumns.length; i++) {
 
 
+					//below the text to enter in the current column will be cropped by the cell text entry limit set by excel
 					var thisText = textToEnter;
 					
 					if (textToEnter.length > 32500) {
@@ -93,7 +95,11 @@ if (Meteor.isServer) {
 						textToEnter = "";
 					};
 
-					if (thisText) {
+					//end text to enter cropping
+
+
+					//update parsed document's cell with keywords text
+					if (thisText && thisText.length) {
 						var colToEnterIn = xlsxDataToUse.textEntryColumns[i] - 1;
 						el[colToEnterIn] = thisText;
 					};
@@ -102,10 +108,11 @@ if (Meteor.isServer) {
 				};
 			};
 
+			// return modified row entry
 			return el;
 		});
 
-
+		
 		console.log('Spreadsheet created, a few more seconds to save it...');
 		//build spreadsheet into buffer
 		NewSpreadsheet.buffer = xlsx.build(xlsxItem);
